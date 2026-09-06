@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gliselfstorage.com/sitemap.xml
