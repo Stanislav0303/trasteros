@@ -62,10 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('data/translations.json');
             translations = await response.json();
 
-            // Set initial lang
-            let currentLang = localStorage.getItem('glilang');
-            if (!currentLang || !supportedLangs.includes(currentLang)) {
-                currentLang = getBrowserLang();
+            // 1. Check URL query param first (e.g. ?lang=es)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+
+            let currentLang;
+            if (urlLang && supportedLangs.includes(urlLang.toLowerCase())) {
+                currentLang = urlLang.toLowerCase();
+            } else {
+                // 2. Check saved preference in localStorage
+                const savedLang = localStorage.getItem('glilang');
+                if (savedLang && supportedLangs.includes(savedLang)) {
+                    currentLang = savedLang;
+                } else {
+                    // 3. Fallback to user's system/browser language
+                    currentLang = getBrowserLang();
+                }
             }
 
             setLanguage(currentLang);
@@ -131,6 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Update SEO Title & Description
+        if (translations[langCode]['page_title']) {
+            document.title = translations[langCode]['page_title'];
+        }
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && translations[langCode]['page_description']) {
+            metaDesc.setAttribute('content', translations[langCode]['page_description']);
+        }
+
         // Update SEO Keywords
         if (metaKeywords && translations[langCode]['keywords']) {
             metaKeywords.setAttribute('content', translations[langCode]['keywords']);
@@ -144,6 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save preferences
         localStorage.setItem('glilang', langCode);
+
+        // Update URL query param without reload
+        try {
+            const currentUrl = new URL(window.location.href);
+            if (currentUrl.searchParams.get('lang') !== langCode) {
+                currentUrl.searchParams.set('lang', langCode);
+                window.history.replaceState({}, '', currentUrl.toString());
+            }
+        } catch (e) {
+            // Silently fallback if URL manipulation is restricted
+        }
 
         // Hide dropdown
         if (langSwitcher) langSwitcher.classList.remove('active');
@@ -306,4 +338,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startInterval();
     }
+
+    // --- 5. FAQ Accordion Toggle ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.closest('.faq-item');
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // If it was not active, open it
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
 });
+
