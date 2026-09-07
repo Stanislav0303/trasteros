@@ -57,7 +57,9 @@
         "faq_q4": "How safe are my belongings at GLI Self Storage?",
         "faq_a4": "Security is our top priority. Our facility features 24/7 CCTV video surveillance, automated alarms, individualized access control, and moisture-resistant construction.",
         "faq_q5": "Where is GLI Self Storage located?",
-        "faq_a5": "We are conveniently located at Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), with fast access from Los Cristianos, Costa Adeje, and Arona."
+        "faq_a5": "We are conveniently located at Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), with fast access from Los Cristianos, Costa Adeje, and Arona.",
+        "whatsapp_tooltip": "Chat with us on WhatsApp",
+        "whatsapp_msg": "Hello, I am interested in renting a storage unit at GLI Self Storage."
     },
     "pl": {
         "top_phone": "+34 711 06 40 60",
@@ -117,7 +119,9 @@
         "faq_q4": "Jak dbacie o bezpieczeństwo przechowywanych rzeczy?",
         "faq_a4": "Bezpieczeństwo to nasz priorytet. Obiekt posiada całodobowy monitoring kamerami CCTV, systemy alarmowe, indywidualną kontrolę dostępu oraz zabezpieczenie przed wilgocią.",
         "faq_q5": "Gdzie dokładnie znajduje się GLI Self Storage?",
-        "faq_a5": "Znajdujemy się przy Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), z szybkim i wygodnym dojazdem z Los Cristianos, Costa Adeje i Arony."
+        "faq_a5": "Znajdujemy się przy Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), z szybkim i wygodnym dojazdem z Los Cristianos, Costa Adeje i Arony.",
+        "whatsapp_tooltip": "Napisz do nas na WhatsApp",
+        "whatsapp_msg": "Dzień dobry, interesuje mnie wynajem boksu magazynowego w GLI Self Storage."
     },
     "es": {
         "top_phone": "+34 711 06 40 60",
@@ -177,7 +181,9 @@
         "faq_q4": "¿Cómo se garantiza la seguridad de mis pertenencias?",
         "faq_a4": "La seguridad es nuestra prioridad. Nuestras instalaciones cuentan con videovigilancia CCTV 24/7, sistemas de alarma avanzados, control de acceso y protección contra la humedad.",
         "faq_q5": "¿Dónde está ubicado GLI Self Storage?",
-        "faq_a5": "Estamos ubicados en Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), con excelente acceso desde Los Cristianos, Costa Adeje y Arona."
+        "faq_a5": "Estamos ubicados en Av. Santiago Puig 5, 38660 Playa de las Américas (Santa Cruz de Tenerife), con excelente acceso desde Los Cristianos, Costa Adeje y Arona.",
+        "whatsapp_tooltip": "¡Escríbenos por WhatsApp!",
+        "whatsapp_msg": "Hola, me interesa alquilar un trastero en GLI Self Storage."
     },
     "uk": {
         "top_phone": "+34 711 06 40 60",
@@ -237,7 +243,9 @@
         "faq_q4": "Як забезпечується безпека моїх речей?",
         "faq_a4": "Безпека – наш пріоритет. Наш об'єкт оснащений відеоспостереженням 24/7, сигналізацією, індивідуальним контролем доступу та захистом від вологи.",
         "faq_q5": "Де саме розташований склад GLI Self Storage?",
-        "faq_a5": "Ми знаходимося за адресою: Av. Santiago Puig 5, 38660 Playa de las Américas, зі зручним доїздом з Лос-Крістіанос, Коста-Адехе та Арони."
+        "faq_a5": "Ми знаходимося за адресою: Av. Santiago Puig 5, 38660 Playa de las Américas, зі зручним доїздом з Лос-Крістіанос, Коста-Адехе та Арони.",
+        "whatsapp_tooltip": "Напишіть нам у WhatsApp",
+        "whatsapp_msg": "Доброго дня, мене цікавить оренда складу в GLI Self Storage."
     },
     "ru": {
         "top_phone": "+34 711 06 40 60",
@@ -297,7 +305,9 @@
         "faq_q4": "Как обеспечивается безопасность вещей?",
         "faq_a4": "Безопасность – наш приоритет. Склад оснащен круглосуточным видеонаблюдением CCTV, охранной сигнализацией, контролем доступа и защитой от влажности.",
         "faq_q5": "Где именно находится склад GLI Self Storage?",
-        "faq_a5": "Мы находимся по адресу Av. Santiago Puig 5, 38660 Playa de las Américas (Тенерифе Юг), в удобной доступности из Лос-Кристианос, Коста-Адехе и Ароны."
+        "faq_a5": "Мы находимся по адресу Av. Santiago Puig 5, 38660 Playa de las Américas (Тенерифе Юг), в удобной доступности из Лос-Кристианос, Коста-Адехе и Ароны.",
+        "whatsapp_tooltip": "Напишите нам в WhatsApp",
+        "whatsapp_msg": "Здравствуйте, меня интересует аренда склада в GLI Self Storage."
     },
     "de": {
         "top_phone": "+34 711 06 40 60",
@@ -357,6 +367,8 @@
         "faq_q4": "Wie sicher sind meine Sachen bei GLI Self Storage?",
         "faq_a4": "Sicherheit steht bei uns an erster Stelle. Unsere Einrichtung ist mit 24/7-Kameraüberwachung, Alarmanlagen, individueller Zugangskontrolle und optimalem Feuchtigkeitsschutz ausgestattet.",
         "faq_q5": "Wo befindet sich GLI Self Storage genau?",
-        "faq_a5": "Sie finden uns zentral an der Av. Santiago Puig 5, 38660 Playa de las Américas (Teneriffa Süd), bequem erreichbar aus Los Cristianos, Costa Adeje und Arona."
+        "faq_a5": "Sie finden uns zentral an der Av. Santiago Puig 5, 38660 Playa de las Américas (Teneriffa Süd), bequem erreichbar aus Los Cristianos, Costa Adeje und Arona.",
+        "whatsapp_tooltip": "Chatten Sie mit uns auf WhatsApp",
+        "whatsapp_msg": "Hallo, ich interessiere mich für einen Lagerraum bei GLI Self Storage."
     }
 }

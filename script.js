@@ -173,6 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save preferences
         localStorage.setItem('glilang', langCode);
 
+        // Update WhatsApp button pre-filled text
+        const waBtn = document.getElementById('whatsapp-btn');
+        if (waBtn && translations[langCode] && translations[langCode]['whatsapp_msg']) {
+            const encodedMsg = encodeURIComponent(translations[langCode]['whatsapp_msg']);
+            waBtn.setAttribute('href', `https://wa.me/34711064060?text=${encodedMsg}`);
+        }
+
         // Update URL query param without reload only on root page
         try {
             const isRoot = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '';
