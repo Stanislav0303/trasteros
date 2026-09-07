@@ -4,39 +4,50 @@
     <url>
         <loc>https://gliselfstorage.com/</loc>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://gliselfstorage.com/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://gliselfstorage.com/?lang=en"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://gliselfstorage.com/?lang=es"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://gliselfstorage.com/?lang=de"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://gliselfstorage.com/?lang=pl"/>
-        <xhtml:link rel="alternate" hreflang="uk" href="https://gliselfstorage.com/?lang=uk"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://gliselfstorage.com/?lang=ru"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gliselfstorage.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://gliselfstorage.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://gliselfstorage.com/de/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://gliselfstorage.com/pl/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://gliselfstorage.com/uk/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://gliselfstorage.com/ru/"/>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://gliselfstorage.com/?lang=es</loc>
+        <loc>https://gliselfstorage.com/es/</loc>
+        <xhtml:link rel="alternate" hreflang="es" href="https://gliselfstorage.com/es/"/>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://gliselfstorage.com/de/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://gliselfstorage.com/de/"/>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://gliselfstorage.com/?lang=en</loc>
+        <loc>https://gliselfstorage.com/pl/</loc>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://gliselfstorage.com/pl/"/>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://gliselfstorage.com/?lang=de</loc>
+        <loc>https://gliselfstorage.com/uk/</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://gliselfstorage.com/uk/"/>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://gliselfstorage.com/?lang=pl</loc>
+        <loc>https://gliselfstorage.com/ru/</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://gliselfstorage.com/ru/"/>
         <lastmod>2026-09-07</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.85</priority>
     </url>
     <url>
         <loc>https://gliselfstorage.com/privacy.html</loc>
