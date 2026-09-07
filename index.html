@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate">
 
 <head>
     <meta charset="UTF-8">
@@ -7,19 +7,28 @@
     <!-- Auto-redirect to user's preferred or system language -->
     <script>
         (function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('lang') === 'en' || urlParams.get('noredirect') === '1') {
+                localStorage.setItem('glilang', 'en');
+                return;
+            }
             var supported = ['es', 'de', 'pl', 'uk', 'ru'];
             var savedLang = localStorage.getItem('glilang');
+            if (savedLang === 'en') return;
             if (savedLang && supported.indexOf(savedLang) !== -1) {
                 window.location.replace('/' + savedLang + '/');
                 return;
             }
             var navLang = (navigator.language || navigator.userLanguage || '').substring(0, 2).toLowerCase();
-            if (!savedLang && supported.indexOf(navLang) !== -1) {
+            if (!savedLang && supported.indexOf(navLang) !== -1 && navLang !== 'en') {
                 localStorage.setItem('glilang', navLang);
                 window.location.replace('/' + navLang + '/');
             }
         })();
     </script>
+
+    <!-- Prevent Chrome automatic translation popup -->
+    <meta name="google" content="notranslate">
 
 
     <!-- Google Tag Manager -->
@@ -42,12 +51,12 @@
 
     <!-- Multilingual Alternate Links (hreflang) -->
     <link rel="alternate" hreflang="x-default" href="https://gliselfstorage.com/">
-    <link rel="alternate" hreflang="en" href="https://gliselfstorage.com/?lang=en">
-    <link rel="alternate" hreflang="es" href="https://gliselfstorage.com/?lang=es">
-    <link rel="alternate" hreflang="de" href="https://gliselfstorage.com/?lang=de">
-    <link rel="alternate" hreflang="pl" href="https://gliselfstorage.com/?lang=pl">
-    <link rel="alternate" hreflang="uk" href="https://gliselfstorage.com/?lang=uk">
-    <link rel="alternate" hreflang="ru" href="https://gliselfstorage.com/?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://gliselfstorage.com/">
+    <link rel="alternate" hreflang="es" href="https://gliselfstorage.com/es/">
+    <link rel="alternate" hreflang="de" href="https://gliselfstorage.com/de/">
+    <link rel="alternate" hreflang="pl" href="https://gliselfstorage.com/pl/">
+    <link rel="alternate" hreflang="uk" href="https://gliselfstorage.com/uk/">
+    <link rel="alternate" hreflang="ru" href="https://gliselfstorage.com/ru/">
 
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -275,12 +284,12 @@
                         <img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN
                     </button>
                     <div class="lang-dropdown">
-                        <a href="#" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="English"> EN</a>
-                        <a href="#" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="Deutsch"> DE</a>
-                        <a href="#" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="Español"> ES</a>
-                        <a href="#" data-lang="pl"><img src="https://flagcdn.com/w20/pl.png" alt="Polski"> PL</a>
-                        <a href="#" data-lang="uk"><img src="https://flagcdn.com/w20/ua.png" alt="Українська"> UK</a>
-                        <a href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="Русский"> RU</a>
+                        <a href="/" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="English"> EN</a>
+                        <a href="/de/" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="Deutsch"> DE</a>
+                        <a href="/es/" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="Español"> ES</a>
+                        <a href="/pl/" data-lang="pl"><img src="https://flagcdn.com/w20/pl.png" alt="Polski"> PL</a>
+                        <a href="/uk/" data-lang="uk"><img src="https://flagcdn.com/w20/ua.png" alt="Українська"> UK</a>
+                        <a href="/ru/" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="Русский"> RU</a>
                     </div>
                 </div>
 

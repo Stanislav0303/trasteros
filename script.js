@@ -59,24 +59,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load translations
     const loadTranslations = async () => {
         try {
-            const response = await fetch('data/translations.json');
+            const isLocalFile = window.location.protocol === 'file:';
+            const isSubdir = window.location.pathname.includes('/de/') ||
+                             window.location.pathname.includes('/es/') ||
+                             window.location.pathname.includes('/pl/') ||
+                             window.location.pathname.includes('/uk/') ||
+                             window.location.pathname.includes('/ru/');
+            const fetchPath = isLocalFile && isSubdir ? '../data/translations.json' : '/data/translations.json';
+            const response = await fetch(fetchPath);
             translations = await response.json();
 
-            // 1. Check URL query param first (e.g. ?lang=es)
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlLang = urlParams.get('lang');
+            // Detect current page language from html lang attribute (e.g. /de/, /pl/)
+            const htmlLang = document.documentElement.lang;
+            let currentLang = htmlLang && supportedLangs.includes(htmlLang) ? htmlLang : 'en';
 
-            let currentLang;
-            if (urlLang && supportedLangs.includes(urlLang.toLowerCase())) {
-                currentLang = urlLang.toLowerCase();
-            } else {
-                // 2. Check saved preference in localStorage
-                const savedLang = localStorage.getItem('glilang');
-                if (savedLang && supportedLangs.includes(savedLang)) {
-                    currentLang = savedLang;
+            // Only on root page check URL param or saved preference
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '') {
+                const urlParams = new URLSearchParams(window.location.search);
+                const urlLang = urlParams.get('lang');
+                if (urlLang && supportedLangs.includes(urlLang.toLowerCase())) {
+                    currentLang = urlLang.toLowerCase();
                 } else {
-                    // 3. Fallback to user's system/browser language
-                    currentLang = getBrowserLang();
+                    const savedLang = localStorage.getItem('glilang');
+                    if (savedLang && supportedLangs.includes(savedLang)) {
+                        currentLang = savedLang;
+                    }
                 }
             }
 
@@ -166,12 +173,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save preferences
         localStorage.setItem('glilang', langCode);
 
-        // Update URL query param without reload
+        // Update URL query param without reload only on root page
         try {
-            const currentUrl = new URL(window.location.href);
-            if (currentUrl.searchParams.get('lang') !== langCode) {
-                currentUrl.searchParams.set('lang', langCode);
-                window.history.replaceState({}, '', currentUrl.toString());
+            const isRoot = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '';
+            if (isRoot) {
+                const currentUrl = new URL(window.location.href);
+                if (currentUrl.searchParams.get('lang') !== langCode) {
+                    currentUrl.searchParams.set('lang', langCode);
+                    window.history.replaceState({}, '', currentUrl.toString());
+                }
             }
         } catch (e) {
             // Silently fallback if URL manipulation is restricted
@@ -187,8 +197,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Events for language change
     langLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const langCode = link.getAttribute('data-lang');
+            if (langCode) {
+                localStorage.setItem('glilang', langCode);
+            }
+            const href = link.getAttribute('href');
+            if (href && href !== '#') {
+                // Natural navigation to target language page (/es/, /pl/, /de/, /uk/, /ru/, /)
+                return;
+            }
+            e.preventDefault();
             setLanguage(langCode);
         });
     });
